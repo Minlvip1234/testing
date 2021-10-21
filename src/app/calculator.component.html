@@ -1,0 +1,206 @@
+<div class="text1">
+    <h1>Calculator</h1>
+</div>
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Input number a</h5>
+    </div>
+    <div class="in1">
+        <input name="showA" type="number" [(ngModel)]="showA">
+    </div>
+</div>
+
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Input number b</h5>
+    </div>
+    <div class="in1">
+        <input name="showB" type="number" [(ngModel)]="showB">
+    </div>
+</div>
+
+<div class="text2">
+    <button (click)='addc()'>Add</button>
+    <button class="button1" (click)='minusc()'>Minus</button>
+    <button class="button1" (click)='dividec()'>Divide</button>
+    <button class="button1" (click)='multiplyc()'>Multiply</button>
+    <button class="button1" (click)='reset()'>Reset</button>
+</div>
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Result</h5>
+    </div>
+    <div class="in2">
+        <h5>{{showC | number : '1.2-2'}}</h5>
+    </div>
+</div>
+
+<div class="text1">
+    <h1>Ex1</h1>
+</div>
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Input radius </h5>
+    </div>
+    <div class="in1">
+        <input name="showR" type="number" [(ngModel)]="showR">
+    </div>
+</div>
+
+<div class="text2">
+    <button (click)='circumference()'>Circumference</button>
+    <button class="button1" (click)='area()'>Area</button>
+    <button class="button1" (click)='reset1()'>Reset</button>
+</div>
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Result</h5>
+    </div>
+    <div class="in2">
+        <h5>{{showRef | number : '1.2-2'}}</h5>
+    </div>
+</div>
+
+
+
+
+<div class="text1">
+    <h1>Ex2</h1>
+</div>
+
+<div class="text2">
+    <div style="float:left">
+        <h5>Input radius </h5>
+    </div>
+    <div class="in1">
+        <input name="showR1" type="number" [(ngModel)]="showR1" (ngModelChange)="onPercentChange($event)">
+    </div>
+</div>
+
+<div class="text2">
+    <div style="float:initial">
+        <h5>Area</h5>
+    </div>
+    <div>
+        <h5>Result: {{showRef1 | number : '1.2-2'}}</h5>
+    </div>
+    <div class="text3">
+        <h5>Circumference</h5>
+    </div>
+    <div>
+        <h5>Result: {{showRef2 | number : '1.2-2'}}</h5>
+    </div>
+</div>
+
+<div class="text1">
+    <h1>Ex3</h1>
+</div>
+
+<div class="body1">
+    <div class="line-1"></div>
+    <div>
+        <div style="float:left;" class="l">
+            <img [src]="logos" class="image" alt="image">
+            <p class="desti"><strong>{{froms}}</strong></p>
+            <div style="float: left;">
+                <p class="billto">Bill to:</p>
+                <p class="bill"><strong>{{bill}}</strong></p>
+            </div>
+            <div style="float: right;">
+                <p class="billto2">Address:</p>
+                <p class="bill2"><strong>{{addresss}}</strong></p>
+            </div>
+        </div>
+        <div style="float: right;" class="tet1">
+            <div></div>
+            <h1>INVOICE</h1>
+            <p class="ids"># {{ids}}</p>
+            <div style="float: left;" class="div1">
+                <p>Date:</p>
+                <p><strong>Balance Due:</strong></p>
+
+            </div>
+            <div style="float: right;">
+                <p><strong>{{dates | date:"mediumDate"}}</strong></p>
+                <p><strong>{{ton | number : '1.2-2'}}</strong></p>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{name}}</th>
+                    <th>{{quantity}}</th>
+                    <th>${{rate}}</th>
+                    <th>${{amount}}</th>
+                </tr>
+                <tr>
+                    <th scope="row">{{name1}}</th>
+                    <th>{{quantity1}}</th>
+                    <th>${{rate1}}</th>
+                    <th>${{amount1}}</th>
+                </tr>
+                <tr>
+                    <th scope="row">{{name2}}</th>
+                    <th>{{quantity2}}</th>
+                    <th>${{rate2}}</th>
+                    <th>${{amount2}}</th>
+                </tr>
+                <tr>
+                    <th scope="row">{{name3}}</th>
+                    <th>{{quantity3}}</th>
+                    <th>${{rate3}}</th>
+                    <th>${{amount3}}</th>
+                </tr>
+                <tr>
+                    <th scope="row">{{name4}}</th>
+                    <th>{{quantity4}}</th>
+                    <th>${{rate4}}</th>
+                    <th>${{amount4}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="float: right;" class="last1">
+        <div style="float: left;" class="left">
+            <p>Subtotal:</p>
+            <p>Discount (21%):</p>
+            <p>Tax:</p>
+            <p>Shipping:</p>
+            <p>Total:</p>
+            <p>Amount Paid:</p>
+        </div>
+        <div style="float: right;">
+            <strong>
+                <p>${{sum | number : '1.2-2'}}</p>
+                <p>${{discount | number : '1.2-2'}}</p>
+                <p>${{taxs | number : '1.2-2'}}</p>
+                <p>${{ship | number : '1.2-2'}}</p>
+                <p>${{total | number : '1.2-2'}}</p>
+                <p>${{pre | number : '1.2-2'}}</p>
+            </strong>
+        </div>
+    </div>
+
+    <div style="float: left;" class="dnot">
+        <p>Note:</p>
+        <p>{{notes}}</p>
+
+    </div>
+
+</div>
